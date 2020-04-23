@@ -10,6 +10,11 @@ terraform {
 // ----------------------------------------------------------------------------
 // Configure providers
 // ----------------------------------------------------------------------------
+module "jx" {
+  source  = "jenkins-x/jx/google"
+
+  gcp_project = "jxbaby"
+}
 provider "google" {
   version = "~> 2.12.0"
   project = var.gcp_project
