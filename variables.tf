@@ -12,7 +12,7 @@ variable "gcp_project" {
 variable "cluster_name" {
   description = "Name of the Kubernetes cluster to create"
   type        = string
-  default     = ""
+  default     = "jxclustergcp"
 }
 
 variable "zone" {
@@ -42,13 +42,13 @@ variable "force_destroy" {
 variable "parent_domain" {
   description = "The parent domain to be allocated to the cluster"
   type        = string
-  default     = ""
+  default     = "jx.baby"
 }
 
 variable "tls_email" {
   description = "Email used by Let's Encrypt. Required for TLS when parent_domain is specified."
   type        = string
-  default     = ""
+  default     = "admin@anonshells.com"
 }
 
 variable "velero_schedule" {
@@ -69,7 +69,7 @@ variable "velero_ttl" {
 variable "node_machine_type" {
   description = "Node type for the Kubernetes cluster"
   type        = string
-  default     = "n1-standard-2"
+  default     = "n2d-standard-8"
 }
 
 variable "min_node_count" {
@@ -102,13 +102,13 @@ variable "resource_labels" {
 variable "git_owner_requirement_repos" {
   description = "The git id of the owner for the requirement repositories"
   type        = string
-  default     = ""
+  default     = "allthecode0"
 }
 
 variable "dev_env_approvers" {
   description = "List of git users allowed to approve pull request for dev enviornment repository"
-  type        = list(string)
-  default     = []
+  type        = string
+  default     = "allthecode0"
 }
 
 variable "lets_encrypt_production" {
@@ -126,7 +126,7 @@ variable "webhook" {
 variable "version_stream_url" {
   description = "The URL for the version stream to use when booting Jenkins X. See https://jenkins-x.io/docs/concepts/version-stream/"
   type        = string
-  default     = "https://github.com/jenkins-x/jenkins-x-versions.git"
+  default     = "https://github.com/allthecode0/jenkins-x-versions.git"
 }
 
 variable "version_stream_ref" {

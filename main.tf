@@ -12,9 +12,13 @@ terraform {
 // ----------------------------------------------------------------------------
 module "jx" {
   source  = "jenkins-x/jx/google"
-
+  version = "1.2.1"
   gcp_project = "jxbaby"
 }
+provider "acme" {
+  version = "~> 1.0"
+}
+
 provider "google" {
   version = "~> 2.12.0"
   project = var.gcp_project

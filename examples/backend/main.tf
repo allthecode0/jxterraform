@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "<my-terraform-state-bucket>"
+    bucket = "jxstate1"
     # arbitrary prefix/directory within the bucket
     prefix = "jx"
   }
@@ -9,5 +9,5 @@ terraform {
 module "jx" {
   source = "jenkins-x/jx/google"
 
-  gcp_project = "<my-gcp-project-id>"
+  gcp_project = "jxbaby"
 }
